@@ -149,6 +149,7 @@ public class ListExamples {
     }
 
     public Integer secondMaximum(List<Integer> nums) {
+        if (nums.isEmpty()) return null;
         Integer max = nums.get(0);
         for (Integer num : nums) {
             if (num > max) {
@@ -183,4 +184,3 @@ public class ListExamples {
         return result;
     }
 }
-

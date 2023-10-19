@@ -1,18 +1,16 @@
 package org.example;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ListExamplesTest {
-    ListExamples listExamples = new org.example.ListExamples();
+    ListExamples listExamples = new ListExamples();
 
     @Test
     void findIndex() {
@@ -38,6 +36,7 @@ class ListExamplesTest {
         assertEquals(reverseList, answer);
         assertEquals(reverseList1, answer1);
     }
+
 
     @Test
     void findSecondLargest1() {
@@ -119,7 +118,7 @@ class ListExamplesTest {
     }
 
     @Test
-    void getMiddleNumber() {
+    void findMiddle() {
         List<Integer> nums = List.of(10, 20, 30, 40, 50);
         List<Integer> nums1 = List.of(10, 20, 40, 50, 60);
         Integer result = listExamples.getMiddleNumber(nums);
@@ -174,22 +173,12 @@ class ListExamplesTest {
 
     @Test
     void secondMaximum() {
-        List<Integer> numbers = new ArrayList<>();
-        numbers.add(10);
-        numbers.add(20);
-        numbers.add(30);
-        numbers.add(40);
-        numbers.add(50);
-        List<Integer> numbers1 = new ArrayList<>();
-        numbers.add(10);
-        numbers.add(20);
-        numbers.add(50);
-        numbers.add(60);
-        numbers.add(70);
-        Integer answer = listExamples.secondMaximum(numbers);
-        Integer answer1 = listExamples.secondMaximum(numbers1);
-        assertEquals(40, answer);
-        assertEquals(60, answer1);
+        List<Integer> nums = new ArrayList<>(List.of(10, 20, 11, 55, 37));
+        List<Integer> nums1 = new ArrayList<>(List.of(7, 20, 77, 40, 17));
+        Integer answer = listExamples.secondMaximum(nums);
+        assertEquals(37, answer);
+        Integer answer1 = listExamples.secondMaximum(nums1);
+        assertEquals(40, answer1);
     }
 
     @Test
