@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ListExamples {
 
-    public Integer findSecondLargest1(List<Integer> nums) {
+    public Integer findSecondLargest(List<Integer> nums) {
         int secondLargest = nums.get(0);
         int largest = nums.get(0);
         for (int i = 0; i < nums.size(); i++) {
@@ -22,13 +22,12 @@ public class ListExamples {
     }
 
     public Integer firstElement(List<Integer> nums) {
-        Integer firstElement = nums.get(0);
-        return firstElement;
+        return nums.get(0);
+
     }
 
     public Integer lastElement(List<Integer> nums) {
-        Integer secondElement = nums.get(nums.size() - 1);
-        return secondElement;
+        return nums.get(nums.size() - 1);
     }
 
     public Integer secondLastElement(List<Integer> nums) {
@@ -55,31 +54,12 @@ public class ListExamples {
 
     public Integer findMinimum(List<Integer> nums) {
         Integer min = nums.get(0);
-        for (int i = 0; i > nums.size(); i++) {
+        for (int i = 0; i < nums.size(); i++) {
             if (nums.get(i) < min) {
                 min = nums.get(i);
             }
         }
         return min;
-    }
-
-    public Integer secondLargest(List<Integer> nums) {
-        Integer max = nums.get(0);
-        Integer maxIndex = 0;
-        for (int i = 0; i < nums.size(); i++) {
-            if (nums.get(i) > max) {
-                max = nums.get(i);
-                maxIndex = 0;
-            }
-        }
-        nums.remove(max);
-        max = nums.get(0);
-        for (Integer num : nums) {
-            if (num > max) {
-                max = num;
-            }
-        }
-        return max;
     }
 
     public List<Integer> removeDuplicate(List<Integer> nums) {
@@ -104,11 +84,6 @@ public class ListExamples {
         Integer middleSize = listsize / 2 + 2;
         Integer middle = nums.get(middleSize);
         return middle;
-    }
-
-    public Integer secondLast(List<Integer> nums) {
-        Integer secondLast = nums.get(nums.size() - 2);
-        return secondLast;
     }
 
     public List<Integer> reverse(List<Integer> nums) {
@@ -165,7 +140,7 @@ public class ListExamples {
         return max1;
     }
 
-    public String addString(List<String> sts) {
+    public String concatenation(List<String> sts) {
         String add = "";
         for (String strs : sts) {
             add = add + strs;

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ListExamplesTest {
-    ListExamples listExamples = new org.example.ListExamples();
+    ListExamples listExamples = new ListExamples();
 
     @Test
     void findIndex() {
@@ -40,9 +40,9 @@ class ListExamplesTest {
     }
 
     @Test
-    void findSecondLargest1() {
-        List<Integer> nums = List.of(10, 20, 30, 40, 50);
-        Integer result = listExamples.findSecondLargest1(nums);
+    void findSecondLargest() {
+        List<Integer> nums = List.of(40, 20, 30, 10, 70);
+        Integer result = listExamples.findSecondLargest(nums);
         assertEquals(40, result);
     }
 
@@ -88,8 +88,8 @@ class ListExamplesTest {
 
     @Test
     void findMaximum() {
-        List<Integer> numbers = List.of(10, 20, 30, 40);
-        List<Integer> numbers1 = List.of(1, 2, 3, 4);
+        List<Integer> numbers = List.of(10, 20, 40, 30);
+        List<Integer> numbers1 = List.of(1, 2, 4, 3);
         Integer result = listExamples.findMaximum(numbers);
         Integer result1 = listExamples.findMaximum(numbers1);
         assertEquals(40, result);
@@ -98,8 +98,8 @@ class ListExamplesTest {
 
     @Test
     void findMinimum() {
-        List<Integer> nums = List.of(10, 20, 30, 40, 50);
-        List<Integer> nums1 = List.of(20, 30, 40, 50);
+        List<Integer> nums = List.of(20, 40, 30, 10, 50);
+        List<Integer> nums1 = List.of(20, 30, 50, 40);
         Integer result = listExamples.findMinimum(nums);
         Integer result1 = listExamples.findMinimum(nums1);
         assertEquals(10, result);
@@ -136,16 +136,6 @@ class ListExamplesTest {
         Integer result1 = listExamples.getMiddleAndPlusTwo(nums1);
         assertEquals(50, result);
         assertEquals(5, result1);
-    }
-
-    @Test
-    void secondLast() {
-        List<Integer> nums = List.of(10, 20, 30, 40);
-        List<Integer> nums1 = List.of(1, 2, 3, 4);
-        Integer answer = listExamples.secondLast(nums);
-        Integer answer1 = listExamples.secondLast(nums1);
-        assertEquals(30, answer);
-        assertEquals(3, answer1);
     }
 
     @Test
@@ -193,13 +183,13 @@ class ListExamplesTest {
     }
 
     @Test
-    void addString() {
+    void concatenation() {
         List<String> names = List.of("shikha", "bruno", "kallu");
         List<String> names1 = List.of("");
         String string1 = "shikhabrunokallu";
         String string2 = "";
-        String s = listExamples.addString(names);
-        String n = listExamples.addString(names1);
+        String s = listExamples.concatenation(names);
+        String n = listExamples.concatenation(names1);
         assertEquals(string1, s);
         assertEquals(string2, n);
     }
