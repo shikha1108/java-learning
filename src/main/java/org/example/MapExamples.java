@@ -30,7 +30,23 @@ public class MapExamples {
             numbers.add(result);
         }
         return numbers;
+
+
     }
 //count fruit number count fruits in a list of fruits.
+   public Map<String, Integer> countFruit(List<String> strs) {
+        Map<String, Integer> newMap = new HashMap<>();
+        for(String str : strs) {
+            if(newMap.containsKey(str)){
+                Integer value = newMap.get(str);
+                value = value + 1;
+                newMap.put(str, value);
+            }
+            else{
+                newMap.put(str, 1);
+            }
+        }
+        return newMap;
+   }
 
 }

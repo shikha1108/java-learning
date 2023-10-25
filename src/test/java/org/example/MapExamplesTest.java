@@ -42,4 +42,16 @@ class MapExamplesTest {
         assertEquals(newList1, answer1);
 
     }
+
+    @Test
+    void countFruit() {
+        List<String> fruits = List.of("apple", "apple", "banana", "orange", "kiwi", "banana", "kiwi");
+        List<String> fruits1 = List.of("apple", "apple", "banana", "orange", "kiwi", "banana", "apple");
+        Map<String, Integer> fruitMap = Map.of("apple", 2, "banana", 2, "orange", 1,"kiwi", 2);
+        Map<String, Integer> fruitMap1 = Map.of("apple", 3, "banana", 2, "orange", 1,"kiwi", 1);
+        Map<String, Integer> result = mapExamples.countFruit(fruits);
+        Map<String, Integer> result1 = mapExamples.countFruit(fruits1);
+        assertEquals(fruitMap, result);
+        assertEquals(fruitMap1, result1);
+    }
 }
