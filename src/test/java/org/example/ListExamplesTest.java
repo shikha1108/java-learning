@@ -213,12 +213,24 @@ class ListExamplesTest {
     void movesAllZeroesToEnd() {
         List<Integer> nums = List.of(1, 0,  5, 3, 0,  40, 0, 50, 0);
         List<Integer> nums1 = List.of(0, 40, 0,  50, 0, 60, 0, 70, 0);
-        List<Integer> endsWithZero = List.of(5, 4, 3, 2, 1, 0, 0, 0, 0);
-        List<Integer> endsWithZero1 = List.of(4, 5, 6, 7,0, 0, 0, 0, 0);
+        List<Integer> endsWithZero = List.of(1, 5, 3, 40, 50, 0, 0, 0, 0);
+        List<Integer> endsWithZero1 = List.of(40, 50, 60, 70 ,0, 0, 0, 0, 0);
         List<Integer> answer = listExamples.movesAllZeroesToEnd(nums);
         List<Integer> answer1 = listExamples.movesAllZeroesToEnd(nums1);
         assertEquals(endsWithZero, answer);
         assertEquals(endsWithZero1, answer1);
+    }
+
+    @Test
+    void segregateEvenAndOdd() {
+        List<Integer> numbers = List.of(20,77,40,60,11,66,51,99,14,2);
+       List<Integer> numbers1 = List.of(2,11,1,4,20,3,6,5,8,7,10,9);
+       List<Integer> rearrangedList = List.of(20,40,60,66,14,2,77,11,51,99);
+       List<Integer> rearrangedList1 = List.of(2,4,20,6,8,10,11,1,3,5,7,9);
+       List<Integer> result = listExamples.segregateEvenAndOdd(numbers);
+       List<Integer> result1 = listExamples.segregateEvenAndOdd(numbers1);
+       assertEquals(rearrangedList,result);
+       assertEquals(rearrangedList1,result1);
     }
 }
 

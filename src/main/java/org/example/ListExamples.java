@@ -160,17 +160,33 @@ public class ListExamples {
 
     public List<Integer> movesAllZeroesToEnd(List<Integer> nums) {
         List<Integer> movesZeroList = new ArrayList<>();
-        Integer result = 0;
         for (int i = 0; i < nums.size() ; i++) {
             if(nums.get(i) != 0) {
-                result += 1;
-                movesZeroList.add(0,result);
-            }
-            else {
                 movesZeroList.add(nums.get(i));
             }
+            }
+        int zeroCount = nums.size() - movesZeroList.size();
+        for (int i = 0; i < zeroCount; i++) {
+            movesZeroList.add(0);
         }
        return movesZeroList;
+    }
+
+    public List<Integer> segregateEvenAndOdd(List<Integer> nums) {
+        List<Integer> rearrangedList = new ArrayList<>();
+        List<Integer> evenNumbersList = new ArrayList<>();
+        List<Integer> oddNumbersList = new ArrayList<>();
+        for (int i = 0; i < nums.size() ; i++) {
+            if(nums.get(i)% 2 == 0) {
+                evenNumbersList.add(nums.get(i));
+            }
+            else {
+                oddNumbersList.add(nums.get(i));
+            }
+        }
+        rearrangedList.addAll(evenNumbersList);
+        rearrangedList.addAll(oddNumbersList);
+        return rearrangedList;
     }
 }
 
