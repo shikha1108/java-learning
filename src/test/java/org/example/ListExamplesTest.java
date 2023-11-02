@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -202,6 +203,22 @@ class ListExamplesTest {
         Boolean answer1 = listExamples.search(nums1, 70);
         assertTrue(answer);
         assertTrue(answer1);
+    }
+
+    @BeforeEach
+    void setUp() {
+    }
+
+    @Test
+    void movesAllZeroesToEnd() {
+        List<Integer> nums = List.of(1, 0,  5, 3, 0,  40, 0, 50, 0);
+        List<Integer> nums1 = List.of(0, 40, 0,  50, 0, 60, 0, 70, 0);
+        List<Integer> endsWithZero = List.of(5, 4, 3, 2, 1, 0, 0, 0, 0);
+        List<Integer> endsWithZero1 = List.of(4, 5, 6, 7,0, 0, 0, 0, 0);
+        List<Integer> answer = listExamples.movesAllZeroesToEnd(nums);
+        List<Integer> answer1 = listExamples.movesAllZeroesToEnd(nums1);
+        assertEquals(endsWithZero, answer);
+        assertEquals(endsWithZero1, answer1);
     }
 }
 

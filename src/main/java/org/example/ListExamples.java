@@ -157,5 +157,20 @@ public class ListExamples {
         }
         return result;
     }
+
+    public List<Integer> movesAllZeroesToEnd(List<Integer> nums) {
+        List<Integer> movesZeroList = new ArrayList<>();
+        Integer result = 0;
+        for (int i = 0; i < nums.size() ; i++) {
+            if(nums.get(i) != 0) {
+                result += 1;
+                movesZeroList.add(0,result);
+            }
+            else {
+                movesZeroList.add(nums.get(i));
+            }
+        }
+       return movesZeroList;
+    }
 }
 
