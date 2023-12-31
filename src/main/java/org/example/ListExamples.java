@@ -157,6 +157,7 @@ public class ListExamples {
         return result;
     }
 
+
     public List<Integer> movesAllZeroesToEnd(List<Integer> nums) {
         List<Integer> movesZeroList = new ArrayList<>();
         for (int i = 0; i < nums.size(); i++) {
@@ -266,8 +267,5 @@ public class ListExamples {
 
         return map;
     }
-
-
-
 }
 

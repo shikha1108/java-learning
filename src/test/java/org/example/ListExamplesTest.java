@@ -1,9 +1,11 @@
 package org.example;
 
+
 import java.util.*;
 
 
 import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -203,6 +205,7 @@ class ListExamplesTest {
         assertTrue(answer);
         assertTrue(answer1);
     }
+
 
     @BeforeEach
     void setUp() {

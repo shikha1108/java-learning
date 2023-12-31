@@ -53,5 +53,4 @@ public class SetExamples {
         differenceSet.removeAll(set2);
         return differenceSet;
     }
-
 }
