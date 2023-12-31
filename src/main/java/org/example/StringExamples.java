@@ -10,4 +10,13 @@ public class StringExamples {
         return reverse;
     }
 
+    public Boolean palindrome(String input) {
+        Boolean result = false;
+        String reverse = reverse(input);
+        if(reverse.equals(input)) {
+            result = true;
+        }
+        return result;
+    }
+
 }

@@ -13,4 +13,11 @@ class StringExamplesTest {
         String reverse = "cba";
         assertEquals(reverse, stringExamples.reverse(str));
     }
+
+    @Test
+    void palindrome() {
+        String str = "bob";
+        Boolean result = true;
+        assertEquals(result, stringExamples.palindrome(str));
+    }
 }
