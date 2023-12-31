@@ -19,8 +19,6 @@ class SetExamplesTest {
         Set<Integer> result1 = setExamples.removeDuplicate(numbers1);
         assertEquals(answer, result);
         assertEquals(answer1, result1);
-
-
     }
 
     @Test

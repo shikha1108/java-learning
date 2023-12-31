@@ -32,7 +32,6 @@ public class MapExamples {
         return numbers;
     }
 
-    //count fruit number count fruits in a list of fruits.
     public Map<String, Integer> countFruit(List<String> strs) {
         Map<String, Integer> newMap = new HashMap<>();
         for (String str : strs) {

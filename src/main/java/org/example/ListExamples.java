@@ -225,7 +225,7 @@ public class ListExamples {
         Set<Integer> uniqueSet = new HashSet<>();
         List<Integer> uniqueList = new ArrayList<>();
         for (Integer num : nums) {
-            if(!uniqueSet.contains(num)) {
+            if (!uniqueSet.contains(num)) {
                 uniqueSet.add(num);
                 uniqueList.add(num);
             }
@@ -236,18 +236,18 @@ public class ListExamples {
         return uniqueList;
         //
     }
+
     // input nums = 1, 2,3,4,5 sum = 9?
     //newSet : 1, 2, 3, 4
     //result = 4
     public Boolean twoSum(List<Integer> nums, Integer sum) {
         Set<Integer> newSet = new HashSet<>();
-        for (Integer num: nums) {
+        for (Integer num : nums) {
             Integer result = sum - num;
-            if(newSet.contains(result)) {
+            if (newSet.contains(result)) {
                 return true;
-            }
-           else{
-               newSet.add(num);
+            } else {
+                newSet.add(num);
             }
         }
         return false;

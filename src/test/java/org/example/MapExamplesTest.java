@@ -40,7 +40,6 @@ class MapExamplesTest {
         List<String> answer1 = mapExamples.keyOfString(fruitsMap);
         assertEquals(newList, answer);
         assertEquals(newList1, answer1);
-
     }
 
     @Test
@@ -53,6 +52,5 @@ class MapExamplesTest {
         Map<String, Integer> result1 = mapExamples.countFruit(fruits1);
         assertEquals(fruitMap, result);
         assertEquals(fruitMap1, result1);
-
     }
 }
