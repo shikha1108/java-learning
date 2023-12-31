@@ -1,8 +1,10 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
 
+import java.util.*;
+
+
+import org.junit.jupiter.api.BeforeEach;
 
 import org.junit.jupiter.api.Test;
 
@@ -202,6 +204,98 @@ class ListExamplesTest {
         Boolean answer1 = listExamples.search(nums1, 70);
         assertTrue(answer);
         assertTrue(answer1);
+    }
+
+
+    @BeforeEach
+    void setUp() {
+    }
+
+    @Test
+    void movesAllZeroesToEnd() {
+        List<Integer> nums = List.of(1, 0, 5, 3, 0, 40, 0, 50, 0);
+        List<Integer> nums1 = List.of(0, 40, 0, 50, 0, 60, 0, 70, 0);
+        List<Integer> endsWithZero = List.of(1, 5, 3, 40, 50, 0, 0, 0, 0);
+        List<Integer> endsWithZero1 = List.of(40, 50, 60, 70, 0, 0, 0, 0, 0);
+        List<Integer> answer = listExamples.movesAllZeroesToEnd(nums);
+        List<Integer> answer1 = listExamples.movesAllZeroesToEnd(nums1);
+        assertEquals(endsWithZero, answer);
+        assertEquals(endsWithZero1, answer1);
+    }
+
+    @Test
+    void segregateEvenAndOdd() {
+        List<Integer> numbers = List.of(20, 77, 40, 60, 11, 66, 51, 99, 14, 2);
+        List<Integer> numbers1 = List.of(2, 11, 1, 4, 20, 3, 6, 5, 8, 7, 10, 9);
+        List<Integer> rearrangedList = List.of(20, 40, 60, 66, 14, 2, 77, 11, 51, 99);
+        List<Integer> rearrangedList1 = List.of(2, 4, 20, 6, 8, 10, 11, 1, 3, 5, 7, 9);
+        List<Integer> result = listExamples.segregateEvenAndOdd(numbers);
+        List<Integer> result1 = listExamples.segregateEvenAndOdd(numbers1);
+        assertEquals(rearrangedList, result);
+        assertEquals(rearrangedList1, result1);
+    }
+
+    @Test
+    void leftRotate() {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        List<Integer> numbers1 = List.of(4, 5, 6, 3, 7, 9);
+        List<Integer> rotatedList = List.of(3, 4, 5, 6, 1, 2);
+        List<Integer> rotatedList1 = List.of(2, 1, 3, 4, 5, 6);
+        List<Integer> result = listExamples.leftRotate(numbers);
+        List<Integer> result1 = listExamples.leftRotate(numbers1);
+        assertEquals(rotatedList, result);
+        assertEquals(rotatedList1, result1);
+    }
+
+
+    @Test
+    void findSingleElement() {
+        List<Integer> numbers = List.of(1, 1, 2, 2, 3, 4, 4, 5, 5);
+        List<Integer> numbers1 = List.of(1, 1, 2, 2, 3, 3, 4, 4, 5);
+        Integer expexted = 3;
+        Integer expexted1 = 5;
+        Integer result = listExamples.findSingleElement(numbers);
+        Integer result1 = listExamples.findSingleElement(numbers1);
+        assertEquals(3, result);
+        assertEquals(5, result1);
+    }
+
+    @Test
+    void sorting() {
+        List<Integer> numbers = List.of(1, 5, 6, 7, 8, 9, 2, 3, 4, 10);
+        List<Integer> numbers1 = List.of(1, 4, 3, 2, 6, 5, 7, 9, 8, 10);
+        List<Integer> answer = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> answer1 = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> result = listExamples.sorting(numbers);
+        List<Integer> result1 = listExamples.sorting(numbers1);
+        assertEquals(answer, result);
+        assertEquals(answer1, result1);
+    }
+
+    @Test
+    void findUnique() {
+        List<Integer> numbers = List.of(1, 5, 6, 6, 8, 7, 7, 8, 9, 2, 3, 4, 10);
+        List<Integer> result = List.of(1, 5, 6, 8, 7, 9, 2, 3, 4, 10);
+        List<Integer> answer = listExamples.findUnique(numbers);
+        assertEquals(result,answer);
+    }
+
+    @Test
+    void twoSum() {
+        List<Integer> numbers = List.of(1,2,3,4,5);
+        Integer sum = 7;
+        Boolean answer = listExamples.twoSum(numbers,7);
+        assertTrue(answer);
+
+
+    }
+
+    @Test
+    void fruitsCount() {
+        List<String> fruits = List.of("apple", "banana", "banana", "orange", "apple", "banana", "orange", "kiwi");
+        Map<String, Integer> expectedCount1 = Map.of("apple", 2, "banana", 3, "orange", 2, "kiwi",1);
+        Map<String, Integer> result = listExamples.fruitsCount(fruits);
+        assertEquals(expectedCount1, result);
     }
 }
 
