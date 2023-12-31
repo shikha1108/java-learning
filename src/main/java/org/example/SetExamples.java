@@ -16,4 +16,42 @@ public class SetExamples {
         }
         return numbers;
     }
+
+
+    //input: 1,2,3,4,5   input : 7
+    //output: true
+    //input: 1,2,3,4,5   input : 10
+    //output: false
+
+    //intersection
+    public Set<Integer> findIntersection(Set<Integer> nums1, Set<Integer> nums2) {
+        Set<Integer> newSet = new HashSet<>();
+        for (Integer num : nums1){
+            for (Integer num1 : nums2 ) {
+                if(num == num1) {
+                    newSet.add(num);
+                    newSet.add(num1);
+                }
+            }
+        }
+        return newSet;
+    }
+    public Set<Integer> findIntersaction(Set<Integer> set1, Set<Integer> set2) {
+        Set<Integer> integerSet = new HashSet<>(set1);
+        integerSet.retainAll(set2);
+        return integerSet;
+    }
+    //union
+    public Set<Integer> findUnion(Set<Integer> nums1, Set<Integer> nums2) {
+        Set<Integer> unionSet = new HashSet<>(nums1);
+        unionSet.addAll(nums2);
+        return unionSet;
+    }
+
+    public Set<Integer> findDifference(Set<Integer> set1, Set<Integer> set2) {
+        Set<Integer> differenceSet = new HashSet<>(set1);
+        differenceSet.removeAll(set2);
+        return differenceSet;
+    }
+
 }

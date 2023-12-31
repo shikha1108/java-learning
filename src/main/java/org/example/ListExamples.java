@@ -1,7 +1,6 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ListExamples {
 
@@ -160,27 +159,26 @@ public class ListExamples {
 
     public List<Integer> movesAllZeroesToEnd(List<Integer> nums) {
         List<Integer> movesZeroList = new ArrayList<>();
-        for (int i = 0; i < nums.size() ; i++) {
-            if(nums.get(i) != 0) {
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums.get(i) != 0) {
                 movesZeroList.add(nums.get(i));
             }
-            }
+        }
         int zeroCount = nums.size() - movesZeroList.size();
         for (int i = 0; i < zeroCount; i++) {
             movesZeroList.add(0);
         }
-       return movesZeroList;
+        return movesZeroList;
     }
 
     public List<Integer> segregateEvenAndOdd(List<Integer> nums) {
         List<Integer> rearrangedList = new ArrayList<>();
         List<Integer> evenNumbersList = new ArrayList<>();
         List<Integer> oddNumbersList = new ArrayList<>();
-        for (int i = 0; i < nums.size() ; i++) {
-            if(nums.get(i)% 2 == 0) {
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums.get(i) % 2 == 0) {
                 evenNumbersList.add(nums.get(i));
-            }
-            else {
+            } else {
                 oddNumbersList.add(nums.get(i));
             }
         }
@@ -188,5 +186,88 @@ public class ListExamples {
         rearrangedList.addAll(oddNumbersList);
         return rearrangedList;
     }
+
+    public List<Integer> leftRotate(List<Integer> nums) {
+        Integer last = nums.get(0);
+        Integer secondLast = nums.get(1);
+        List<Integer> newList = new ArrayList<>();
+        for (Integer num : nums) {
+            newList.add(num);
+        }
+        newList.remove(0);
+        newList.remove(0);
+        newList.add(last);
+        newList.add(secondLast);
+        return newList;
+    }
+
+    public Integer findSingleElement(List<Integer> nums) {
+        Integer result = 0;
+        for (int num : nums) {
+            result ^= num;
+        }
+        return result; // result will be 90.
+    }
+
+    public List<Integer> sorting(List<Integer> nums) {
+        List<Integer> sortedList = new ArrayList<>(nums);
+        Collections.sort(sortedList);
+        return sortedList;
+    }
+
+    //nums : 1,2,3,3,4,5,5
+    //uniqueSet: 1,2,3,4,5
+    //uniqueList: 1,2,3,4,5
+    //
+//time complexcity = O(n*n)
+    public List<Integer> findUnique(List<Integer> nums) {
+        Set<Integer> uniqueSet = new HashSet<>();
+        List<Integer> uniqueList = new ArrayList<>();
+        for (Integer num : nums) {
+            if(!uniqueSet.contains(num)) {
+                uniqueSet.add(num);
+                uniqueList.add(num);
+            }
+//            if (uniqueSet.add(num)) {
+//                uniqueList.add(num);
+//            }
+        }
+        return uniqueList;
+        //
+    }
+    // input nums = 1, 2,3,4,5 sum = 9?
+    //newSet : 1, 2, 3, 4
+    //result = 4
+    public Boolean twoSum(List<Integer> nums, Integer sum) {
+        Set<Integer> newSet = new HashSet<>();
+        for (Integer num: nums) {
+            Integer result = sum - num;
+            if(newSet.contains(result)) {
+                return true;
+            }
+           else{
+               newSet.add(num);
+            }
+        }
+        return false;
+    }
+
+    public Map<String, Integer> fruitsCount(List<String> fruits) {
+        Map<String, Integer> map = new HashMap<>();
+        for (String f : fruits) {
+            if (map.containsKey(f)) {
+                Integer value = map.get(f);
+                value = value + 1;
+                map.put(f, value);
+            } else {
+                map.put(f, 1);
+            }
+        }
+
+        return map;
+    }
+
+
+
 }
 
