@@ -157,7 +157,6 @@ public class ListExamples {
         return result;
     }
 
-
     public List<Integer> movesAllZeroesToEnd(List<Integer> nums) {
         List<Integer> movesZeroList = new ArrayList<>();
         for (int i = 0; i < nums.size(); i++) {
@@ -207,7 +206,7 @@ public class ListExamples {
         for (int num : nums) {
             result ^= num;
         }
-        return result; // result will be 90.
+        return result;
     }
 
     public List<Integer> sorting(List<Integer> nums) {
@@ -216,11 +215,6 @@ public class ListExamples {
         return sortedList;
     }
 
-    //nums : 1,2,3,3,4,5,5
-    //uniqueSet: 1,2,3,4,5
-    //uniqueList: 1,2,3,4,5
-    //
-//time complexcity = O(n*n)
     public List<Integer> findUnique(List<Integer> nums) {
         Set<Integer> uniqueSet = new HashSet<>();
         List<Integer> uniqueList = new ArrayList<>();
@@ -229,17 +223,10 @@ public class ListExamples {
                 uniqueSet.add(num);
                 uniqueList.add(num);
             }
-//            if (uniqueSet.add(num)) {
-//                uniqueList.add(num);
-//            }
         }
         return uniqueList;
-        //
     }
 
-    // input nums = 1, 2,3,4,5 sum = 9?
-    //newSet : 1, 2, 3, 4
-    //result = 4
     public Boolean twoSum(List<Integer> nums, Integer sum) {
         Set<Integer> newSet = new HashSet<>();
         for (Integer num : nums) {
